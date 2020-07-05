@@ -9,6 +9,7 @@ import { assertExists } from '@ulangi/assert';
 import { Request, User } from '@ulangi/ulangi-common/interfaces';
 import { RequestResolver, UserResolver } from '@ulangi/ulangi-common/resolvers';
 import * as express from 'express';
+import { AuthenticatedUser } from '../interfaces/AuthenticatedUser';
 
 export class ApiRequest<T extends Request> {
   private userResolver = new UserResolver();
@@ -66,7 +67,7 @@ export class ApiRequest<T extends Request> {
 
   public get userShardId(): number {
     if (this.isAuthenticated()) {
-      return assertExists(this.req.user).shardId;
+      return (<AuthenticatedUser>assertExists(this.req.user)).shardId;
     } else {
       throw new Error(
         'Cannot get user shard id because User is not isAuthenticated.'
@@ -76,7 +77,7 @@ export class ApiRequest<T extends Request> {
 
   public get userEncryptedPassword(): string {
     if (this.isAuthenticated()) {
-      return assertExists(this.req.user).encryptedPassword;
+      return (<AuthenticatedUser>assertExists(this.req.user)).encryptedPassword;
     } else {
       throw new Error(
         'Cannot get user encrypted password because User is not isAuthenticated.'

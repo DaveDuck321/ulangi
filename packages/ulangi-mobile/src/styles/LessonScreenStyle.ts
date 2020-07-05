@@ -33,7 +33,7 @@ export class LessonScreenStyle {
 
   public static SCREEN_LIGHT_STYLES_ONLY = {
     statusBar: {
-      style: 'dark',
+      style: <'dark'>'dark',
       backgroundColor: '#f3f3f3',
     },
     topBar: {
@@ -48,7 +48,7 @@ export class LessonScreenStyle {
 
   public static SCREEN_DARK_STYLES_ONLY = {
     statusBar: {
-      style: 'light',
+      style: <'light'>'light',
       backgroundColor: '#212121',
     },
     topBar: {
@@ -88,14 +88,14 @@ export class LessonScreenStyle {
   public static LIGHT_BOX_SCREEN_STYLES: { light: Options; dark: Options } = {
     light: {
       statusBar: {
-        style: 'dark',
+        style: <'dark'>'dark',
         // Android only
         backgroundColor: '#f3f3f3',
       },
     },
     dark: {
       statusBar: {
-        style: 'light',
+        style: <'light'>'light',
         // Android only
         backgroundColor: '#212121',
       },

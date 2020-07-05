@@ -29,7 +29,7 @@ export class SecondaryScreenStyle {
 
   public static SCREEN_LIGHT_STYLES_ONLY = {
     statusBar: {
-      style: 'dark',
+      style: <'dark'>'dark',
       backgroundColor: '#e0e0e0',
     },
     topBar: {
@@ -44,7 +44,7 @@ export class SecondaryScreenStyle {
 
   public static SCREEN_DARK_STYLES_ONLY = {
     statusBar: {
-      style: 'light',
+      style: <'light'>'light',
       backgroundColor: '#313131',
     },
     topBar: {
@@ -84,14 +84,14 @@ export class SecondaryScreenStyle {
   public static LIGHT_BOX_SCREEN_STYLES: { light: Options; dark: Options } = {
     light: {
       statusBar: {
-        style: 'dark',
+        style: <'dark'>'dark',
         // Android only
         backgroundColor: '#e0e0e0',
       },
     },
     dark: {
       statusBar: {
-        style: 'light',
+        style: <'light'>'light',
         // Android only
         backgroundColor: '#212121',
       },
