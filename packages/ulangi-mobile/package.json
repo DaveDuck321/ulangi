@@ -3,6 +3,7 @@
   "name": "@ulangi/ulangi-mobile",
   "version": "3.12.2",
   "scripts": {
+    "postbootstrap": "if [[ \"$OSTYPE\" == \"darwin\"* ]]; then cd ios && pod install; fi",
     "android": "react-native run-android --variant devDebug --appIdSuffix dev",
     "ios": "react-native run-ios --scheme UlangiMobile-Dev",
     "start": "react-native start",
