@@ -5,7 +5,7 @@
  * See LICENSE or go to https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-import chalk from 'chalk';
+import * as chalk from 'chalk';
 import * as _ from 'lodash';
 import * as logSymbols from 'log-symbols';
 

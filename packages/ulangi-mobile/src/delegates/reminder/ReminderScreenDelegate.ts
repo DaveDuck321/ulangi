@@ -6,7 +6,7 @@
  */
 
 import { ActionType, createAction } from '@ulangi/ulangi-action';
-import { ErrorCode, UserExtraDataName } from '@ulangi/ulangi-common/enums';
+import { UserExtraDataName } from '@ulangi/ulangi-common/enums';
 import { ErrorBag } from '@ulangi/ulangi-common/interfaces';
 import { EventBus, group, on, once } from '@ulangi/ulangi-event';
 import {
@@ -143,10 +143,10 @@ export class ReminderScreenDelegate {
     // instead of ErrorCode.GENERAL__FAILED_TO_GRANT_PERMISSION
     this.dialogDelegate.showFailedDialog(
       {
-        errorCode:
+        /*errorCode:
           errorBag.errorCode === ErrorCode.GENERAL__FAILED_TO_GRANT_PERMISSION
             ? ErrorCode.REMINDER__PERMISSION_REQUIRED
-            : errorBag.errorCode,
+            : errorBag.errorCode,*/
         ...errorBag,
       },
       {

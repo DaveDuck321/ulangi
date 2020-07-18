@@ -5,20 +5,19 @@
  * See LICENSE or go to https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-import TextToSpeech, {
-  SynthesizeSpeechResponse,
-} from '@google-cloud/text-to-speech';
+import { TextToSpeechClient } from '@google-cloud/text-to-speech';
+import { google } from '@google-cloud/text-to-speech/build/protos/protos';
 
 export class GoogleTextToSpeechAdapter {
   private textToSpeechClient: InstanceType<
-    typeof TextToSpeech.TextToSpeechClient
+    typeof TextToSpeechClient
   >;
 
   public constructor(
     googleCloudProjectId: string,
     googleCloudServiceAccount: string
   ) {
-    this.textToSpeechClient = new TextToSpeech.TextToSpeechClient({
+    this.textToSpeechClient = new TextToSpeechClient({
       projectId: googleCloudProjectId,
       keyFilename: googleCloudServiceAccount,
     });
@@ -41,7 +40,7 @@ export class GoogleTextToSpeechAdapter {
     text: string,
     languageCode: string,
     voiceName?: string
-  ): Promise<[SynthesizeSpeechResponse]> {
+  ): Promise<[google.cloud.texttospeech.v1.ISynthesizeSpeechResponse, google.cloud.texttospeech.v1.ISynthesizeSpeechRequest | undefined, {} | undefined]> {
     return this.textToSpeechClient.synthesizeSpeech({
       input: {
         text,
