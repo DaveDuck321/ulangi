@@ -27,7 +27,7 @@
   "author": "Minh Loi",
   "license": "GPL-3.0",
   "dependencies": {
-    "@google-cloud/text-to-speech": "^3.0.1",
+    "@google-cloud/text-to-speech": "^1.1.4",
     "@google-cloud/translate": "^2.1.2",
     "@ulangi/assert": "^1.6.1",
     "@ulangi/resolver": "^2.0.3",
